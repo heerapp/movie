@@ -20,7 +20,7 @@ class Movie(models.Model):
     genre = models.CharField(max_length=25, choices=Genre)
     actors = models.ForeignKey(Actor, on_delete=models.CASCADE)
     description = models.CharField(max_length=300, blank=True)
-    image = models.ImageField(upload_to="media")
+    url = models.URLField(blank=True)
 
     def __str__(self):
         return self.title
